@@ -9,6 +9,7 @@ Servo myservo3;
 const int button1Pin = 2;
 const int button2Pin = 4;
 const int button3Pin = 8;
+// BUTTON STATE VARIABLES
 int buttonState1;
 int buttonState2;
 int buttonState3;
@@ -21,6 +22,7 @@ void setup() {
   pinMode(button1Pin, INPUT);
   pinMode(button2Pin, INPUT);
   pinMode(button3Pin, INPUT);
+  // SERIAL BEGIN
   Serial.begin(9600);
   // ATTACH THE SERVO
   myservo1.attach(11);
@@ -37,7 +39,7 @@ void setup() {
 }
 
 void loop() {
-  // button 1
+  // BUTTON 1
   buttonState1 = digitalRead(button1Pin);
   if (buttonState1 != previousButtonState1) {
     if (buttonState1 == HIGH){
@@ -46,7 +48,7 @@ void loop() {
     }
     previousButtonState1 = buttonState1;
     } 
-  // button 2
+  // BUTTON 2
   buttonState2 = digitalRead(button2Pin);
   if (buttonState2 != previousButtonState2) {
     if (buttonState2 == HIGH){
@@ -55,7 +57,7 @@ void loop() {
     }
    previousButtonState2 = buttonState2;
     }
-  // button 3
+  // BUTTON 3
  buttonState3 = digitalRead(button3Pin);
   if (buttonState3 != previousButtonState3) {
     if (buttonState3 == HIGH){
